@@ -1,0 +1,13 @@
+XOR Encryption Method
+-To encrypt, take a text file, convert the bytes to ASCII codes, then XOR each byte with a given value taken from a secret key.
+-The advantage with the XOR function is that using the same encryption key on the cipher text restores the plain text. For example, if the key is 42...
+    Plain text to cipher text: 65 XOR 42 = 107
+    Cipher text to plain text: 107 XOR 42 = 65
+-For unbreakable encryption, the key must be the same length as the plain text message. That is impractical compared to using a shorter password as the key.
+-If the key is shorter than the plain text, then the key will be repeated cyclically throughout the cipher text.
+
+Strategy for Decrypting the Cipher Text
+-There are 17576 (26*26*26) possible keys, a low enough number for brute force to be an option.
+-XOR encryption has similar flaws to a Vigenère cipher. Since the key is known to be 3 characters, the cipher text can be separated into 3 columns to decrypt individually.
+    For example, character 1 of the key was used to encrypt characters 1, 4, 7, ..., N-2, where N is the length of the cipher text.
+-Since the plain text is in English, use frequency analysis. Each character of the key which produces the most 'e' characters is most likely part of the decryption key.
