@@ -1,0 +1,10 @@
+Identifying a Palindrome Regardless of Base
+-Reverse the number's digits.
+-Compare the original number with the reversed number to check if they are the same.
+
+Reversing a Number in Base 10
+-Use modulo 10 to get 1 digit of the number and integer division by 10 to move on to the next digit.
+-For each digit, multiply a sum representing the reversed number by 10 to move all digits to their correct decimal places, then add the current digit to that sum.
+
+Reversing a Number in Base 2
+-This should work exactly like in base 10, except with 2 instead of 10 for the modulo, integer division, and multiplication operations.
